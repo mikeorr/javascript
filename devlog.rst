@@ -34,3 +34,9 @@ Nodel it's at https://docs.npmjs.com/ .
     "$ npm install" => instal all the dependencies listed in "package.json".
 
     The video has an example of a minimal web server.
+
+Node documentation:
+
+    "$ npm install -g npm@latest". "npm -v" => NPM version 4.0.5.
+
+Installed 'underscore' and 'backbone'.
