@@ -1,5 +1,28 @@
 body {
+    background-color: white;
+    color: black;
     font-family: cursive;
+    font-size: 25px;   /* Browser default is 16px */
+    text-align: center;
+    }
+
+table.watch {
+    width: 100%;
+    /* margin: 0 auto; */
+    }
+
+table.watch th {
+    background-color: #651a1a;  /* dark brown (25%) */
+    color: white;
+    font-size: 30px;
+    padding: 20px 20px;
+    text-align: left;
+    width: 120px;
+    }
+
+table.watch td {
+    border: solid 1px;
+    padding: 1em;
     }
 
 div.time-row {
@@ -7,5 +30,5 @@ div.time-row {
     }
 
 span#hours-minutes {
-    font-size: xx-large;
+    font-size: 75px;
     }
