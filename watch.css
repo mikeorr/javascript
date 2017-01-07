@@ -6,6 +6,14 @@ body {
     text-align: center;
     }
 
+a {
+    text-decoration: none;
+    }
+
+a:hover {
+    text-decoration: underline;
+    }
+
 table.watch {
     width: 100%;
     /* margin: 0 auto; */
