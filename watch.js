@@ -2,11 +2,26 @@
 
 // moment = require("moment");
 
-var stopwatch_start = null;
+var clock = {
+    hours_minutes: null,
+    hours_minutes1: null,
+    seconds: null,
+    seconds1: null,
+    ampm: null,
+    ampm1: null,
+    date: null,
+    date1: null
+    };
+
+var stopwatch = {
+    run: false,
+    time: 0,
+    time1: 0
+    };
+
 var timer = null;
 
 var update = function (id, value, value1) {
-    console.log(value === value1)
     if (value !== value1) {
         document.getElementById(id).innerHTML = value;
     }
@@ -14,14 +29,18 @@ var update = function (id, value, value1) {
 
 var tick = function() {
     var now = moment();
-    var hours_minutes = now.format("h:mm")
-    var seconds = now.format("ss")
-    var ampm = now.format("a")
-    var date = now.format("dddd, MMMM D, YYYY")
-    update("hours-minutes", hours_minutes, null);
-    update("seconds", seconds, null);
-    update("ampm", ampm, null);
-    update("date", date, null);
+    clock.hours_minutes = now.format("h:mm");
+    clock.seconds = now.format("ss");
+    clock.ampm = now.format("a");
+    clock.date = now.format("dddd, MMMM D, YYYY");
+    update("hours-minutes", clock.hours_minutes, clock.hours_minutes1);
+    update("seconds", clock.seconds, clock.seconds1);
+    update("ampm", clock.ampm, clock.ampm1);
+    update("date", clock.date, clock.date1);
+    clock.hours_minutes1 = clock.hours_minutes;
+    clock.seconds1 = clock.seconds;
+    clock.ampm1 = clock.ampm;
+    clock.date1 = clock.date;
 }
 
 var init = function() {
