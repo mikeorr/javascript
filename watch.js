@@ -2,48 +2,64 @@
 
 // moment = require("moment");
 
-var clock = {
-    hours_minutes: null,
-    hours_minutes1: null,
-    seconds: null,
-    seconds1: null,
-    ampm: null,
-    ampm1: null,
-    date: null,
-    date1: null
-    };
-
-var stopwatch = {
-    run: false,
-    time: 0,
-    time1: 0
-    };
-
-var timer = null;
-
-var update = function (id, value, value1) {
-    if (value !== value1) {
-        document.getElementById(id).innerHTML = value;
+class Clock {
+    constructor () {
+        this.fmt_hours_minutes = null;
+        this.fmt_seconds = null;
+        this.fmt_ampm = null;
+        this.fmt_date = null;
+        this.unix = null;
     }
 }
 
-var tick = function() {
-    var now = moment();
-    clock.hours_minutes = now.format("h:mm");
-    clock.seconds = now.format("ss");
-    clock.ampm = now.format("a");
-    clock.date = now.format("dddd, MMMM D, YYYY");
-    update("hours-minutes", clock.hours_minutes, clock.hours_minutes1);
-    update("seconds", clock.seconds, clock.seconds1);
-    update("ampm", clock.ampm, clock.ampm1);
-    update("date", clock.date, clock.date1);
-    clock.hours_minutes1 = clock.hours_minutes;
-    clock.seconds1 = clock.seconds;
-    clock.ampm1 = clock.ampm;
-    clock.date1 = clock.date;
+class Stopwatch {
+    constructor () {
+        this.run = false;
+        this.split = false;
+        this.start = false;
+        this.fmt_time = null;
+    }
 }
 
-var init = function() {
+const clock = new Clock();
+const stopwatch = new Stopwatch();
+const get_element = document.getElementById.bind(document)
+
+let timer = null;
+
+function update (id, value, value1) {
+    if (value !== value1) {
+        deid(id).innerHTML = value;
+    }
+}
+
+function tick () {
+    const now = moment();
+    const fmt_hours_minutes = now.format("h:mm");
+    const fmt_seconds = now.format("ss");
+    const fmt_ampm = now.format("a");
+    const fmt_date = now.format("dddd, MMMM D, YYYY");
+    if (fmt_hours_minutes != clock.fmt_hours_minutes) {
+        get_element("hours-minutes").innerHTML = fmt_hours_minutes;
+        clock.fmt_hours_minutes = fmt_hours_minutes;
+    }
+    if (fmt_seconds != clock.fmt_seconds) {
+        get_element("seconds").innerHTML = fmt_seconds;
+        clock.fmt_seconds = fmt_seconds;
+    }
+    if (fmt_ampm != clock.fmt_ampm) {
+        get_element("ampm").innerHTML = fmt_ampm;
+        clock.fmt_ampm = fmt_ampm;
+    }
+    if (fmt_date != clock.fmt_date) {
+        get_element("date").innerHTML = fmt_date;
+        clock.fmt_date = fmt_date;
+    }
+    if (stopwatch.run) {
+    }
+}
+
+function init() {
     tick();
     timer = window.setInterval(tick, 500);
 }
