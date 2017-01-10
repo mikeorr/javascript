@@ -31,13 +31,8 @@ const get_element = document.getElementById.bind(document)
 
 let timer = null;
 
-function onclick_24hour (event) {
-    // 'event.target' and 'this' are the checkbox.
-    clock.military = event.target.checked;
-    tick(true);
-}
 
-function tick (refresh_all=false) {
+function tick(refresh_all=false) {
     let now, changed, fmt_hours_minutes, fmt_seconds, fmt_ampm, fmt_date;
     now = moment();
     changed = (
@@ -83,6 +78,12 @@ function tick (refresh_all=false) {
 function init() {
     tick(true);
     timer = window.setInterval(tick, 500);
+}
+
+function onclick_24hour(event) {
+    // 'event.target' and 'this' are the checkbox.
+    clock.military = event.target.checked;
+    tick(true);
 }
 
 window.addEventListener("load", init);
