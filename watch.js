@@ -31,10 +31,10 @@ const get_element = document.getElementById.bind(document)
 
 let timer = null;
 
-function update (id, value, value1) {
-    if (value !== value1) {
-        deid(id).innerHTML = value;
-    }
+function onclick_24hour (event) {
+    // 'event.target' and 'this' are the checkbox.
+    clock.military = event.target.checked;
+    tick(true);
 }
 
 function tick (refresh_all=false) {
@@ -86,3 +86,4 @@ function init() {
 }
 
 window.addEventListener("load", init);
+get_element("24hour").addEventListener("click", onclick_24hour);
