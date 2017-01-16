@@ -2,6 +2,10 @@
 
 // moment = require("moment");
 
+const LAT = 47.6062095;
+const LON = -122.3320708;
+const SUN_URL = `http://api.sunrise-sunset.org/json?lat=%{LAT}&lon=${LON}&formatted=0`;
+
 class Clock {
     constructor () {
         this.fmt_hours_minutes = null;
@@ -76,8 +80,18 @@ function tick(refresh_all=false) {
 }
 
 function init() {
+    let xhr;
     tick(true);
     timer = window.setInterval(tick, 500);
+    xhr = new XMLHttpRequest();
+    xhr.open("GET", SUN_URL);
+    xhr.onload = function () {
+        console.log("Response = %s =", xhr.responseText);
+        let info = JSON.parse(xhr.responseText);
+        get_element("sunrise-time").innerHTML = info.results.sunrise;
+        get_element("sunset-time").innerHTML = info.results.sunset;
+    };
+    xhr.send();
 }
 
 function onclick_24hour(event) {
