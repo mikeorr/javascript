@@ -86,12 +86,16 @@ function init() {
     xhr = new XMLHttpRequest();
     xhr.open("GET", SUN_URL);
     xhr.onload = function () {
-        console.log("Response = %s =", xhr.responseText);
-        let info = JSON.parse(xhr.responseText);
-        get_element("sunrise-time").innerHTML = info.results.sunrise;
-        get_element("sunset-time").innerHTML = info.results.sunset;
+        console.log("Response : %s :", xhr.responseText);
+        if (xhr.status === 200) {
+            let info = JSON.parse(xhr.responseText);
+            get_element("sunrise-time").innerHTML = info.results.sunrise;
+            get_element("sunset-time").innerHTML = info.results.sunset;
+        } else {
+            throw new Error("Fetching sun data failed.");
+        }
     };
-    xhr.send();
+    xhr.send(null);
 }
 
 function onclick_24hour(event) {
