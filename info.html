@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="info.css" />
+
+    <title>JSInfo</title>
+  </head>
+  <body>
+
+    <!-- BEGIN page content -->
+
+    <h1>JSInfo</h1>
+
+    <p class="breadcrumbs"><a href="index.html">Home</a></p>
+
+    <table class="info">
+      <colgroup>
+        <col class="col1" />
+        <col class="col2" />
+        <col class="col3" />
+      </colgroup>
+
+      <!-- Window -->
+      <tr>
+        <th rowspan="4" scope="row" class="col1">Window</th>
+        <th scope="row">Name</th>
+        <td id="window-name"></td>
+      </tr>
+      <tr>
+        <th scope="row">Inner Height</th>
+        <td id="window-innerHeight"></td>
+      </tr>
+      <tr>
+        <th scope="row">Inner Width</th>
+        <td id="window-innerWidth"></td>
+      </tr>
+      <tr>
+        <th scope="row"># History Items</th>
+        <td id="window-history-length"></td>
+      </tr>
+
+      <!-- Screen -->
+      <tr>
+        <th rowspan="4" scope="row" class="col1">Screen</th>
+        <th scope="row">Height</th>
+        <td id="screen-height"></td>
+      </tr>
+      <tr>
+        <th scope="row">Width</th>
+        <td id="screen-width"></td>
+      </tr>
+      <tr>
+        <th scope="row">Color Depth</th>
+        <td id="screen-colorDepth"></td>
+      </tr>
+      <tr>
+        <th scope="row">Pixel Depth</th>
+        <td id="screen-pixelDepth"></td>
+      </tr>
+
+      <!-- Navigator -->
+      <tr>
+        <th rowspan="10" scope="row">Navi&shy;gator</th>
+        <th scope="row">App Code Name</th>
+        <td id="navigator-appCodeName"></td>
+      </tr>
+      <tr>
+        <th scope="row">App Name</th>
+        <td id="navigator-appName"></td>
+      </tr>
+      <tr>
+        <th scope="row">App Version</th>
+        <td id="navigator-appVersion"></td>
+      </tr>
+      <tr>
+        <th scope="row">Cookies Enabled?</th>
+        <td id="navigator-cookieEnabled"></td>
+      </tr>
+      <tr>
+        <th scope="row">Language</th>
+        <td id="navigator-language"></td>
+      </tr>
+      <tr>
+        <th scope="row">Online?</th>
+        <td id="navigator-onLine"></td>
+      </tr>
+      <tr>
+        <th scope="row">Platform</th>
+        <td id="navigator-platform"></td>
+      </tr>
+      <tr>
+        <th scope="row">Product</th>
+        <td id="navigator-product"></td>
+      </tr>
+      <tr>
+        <th scope="row">User Agent</th>
+        <td id="navigator-userAgent"></td>
+      </tr>
+      <tr>
+        <th scope="row">Java enabled?</th>
+        <td id="navigator-javaEnabled"></td>
+      </tr>
+
+    </table>
+
+    <!-- END page content -->
+
+    <script src="node_modules/moment/moment.js"></script>
+    <script src="info.js"></script>
+  </body>
+</html>
