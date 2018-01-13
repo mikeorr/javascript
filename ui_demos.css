@@ -1,0 +1,17 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    /* Bootstrap default font-size: 16px */
+    }
+
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+p.breadcrumbs {
+    }
+
+div#sidebar, div#main {
+    border: solid 1px;
+    padding: 1em;
+    }
