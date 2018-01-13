@@ -2,7 +2,7 @@ body {
     background-color: white;
     color: black;
     font-family: "Comic Sans MS", cursive;
-    font-size: 25px;   /* Browser default is 16px */
+    font-size: 25px;   /* Bootstrap 4 default is 16px */
     text-align: center;
     }
 
